@@ -17,7 +17,7 @@ public class AuthUserServiceImpl implements AuthUserService {
     @Override
     public AuthUser saveUser(UserDto user) {
         AuthUser authUser = new AuthUser();
-        authUser.setUsername(user.userName());
+        authUser.setUsername(user.username());
         authUser.setPassword(passwordEncoder.encode(user.password()));
         return authUserRepository.save(authUser);
     }
